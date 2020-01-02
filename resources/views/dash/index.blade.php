@@ -2,9 +2,18 @@
 @section('title','Dashboard')
 @section('breadcrumb','Home')
 @section('content')
-<div class="card">
-    <div class="card-title">
-        <h3>DASHBOARD</h3>
+<div class="page-menu menu-creative">
+    <div class="container">
+        <nav>
+            <ul>
+                <li class="active"><a href="/dashboard">Home</a></li>
+                <li><a href="#">User management</a></li>
+                <li><a href="#">Packing list</a></li>
+            </ul>
+        </nav>
+        <div id="pageMenu-trigger">
+            <i class="fa fa-bars"></i>
+        </div>
     </div>
 </div>
 @endsection

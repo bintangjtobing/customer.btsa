@@ -2,208 +2,209 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Customers BTSA Logistics - @yield('title')</title>
-    <meta name="title" content="Customers BTSA Logistics">
-    <meta name="language" content="English">
-    <meta name="author" content="Bintang Jeremia Tobing">
-
-    <!-- ================= Favicon ================== -->
-    <!-- Standard -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="Bintang j Tobing" />
+    <meta name="description"
+        content="BTSA Logistics adalah Expedisi, EMKL, EMKU & Custom Clearance di Indonesia. Berada di Jakarta, Medan, Surabaya, Semarang, Palembang, Pekan Baru, Bali,  Makasar dan Lombok.">
     <link rel="shortcut icon"
-        href="{!! url('https://res.cloudinary.com/btsa-co-id/image/upload/v1541503574/jscsstxtfiledll/icon/starlogo.ico')!!}">
-    <!-- Retina iPad Touch Icon-->
-    <link rel="apple-touch-icon" sizes="144x144" href="{!! url ('http://placehold.it/144.png/000/fff')!!}">
-    <!-- Retina iPhone Touch Icon-->
-    <link rel="apple-touch-icon" sizes="114x114" href="{!! url ('http://placehold.it/114.png/000/fff')!!}">
-    <!-- Standard iPad Touch Icon-->
-    <link rel="apple-touch-icon" sizes="72x72" href="{!! url ('http://placehold.it/72.png/000/fff')!!}">
-    <!-- Standard iPhone Touch Icon-->
-    <link rel="apple-touch-icon" sizes="57x57" href="{!! url ('http://placehold.it/57.png/000/fff')!!}">
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-    <script type="text/javascript"
-        src="{!!url('https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/js/tempusdominus-bootstrap-4.min.js')!!}">
-    </script>
-    <link rel="stylesheet"
-        href="{!!url('https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css')!!}" />
-    <script src="https://kit.fontawesome.com/ae026c985d.js" crossorigin="anonymous"></script>
-</head>
-<!-- Styles -->
-<link href="{!! asset('css/lib/weather-icons.css')!!}" rel="stylesheet" />
-<link rel="stylesheet" type="text/css" href="{!!asset('css/customerdash.css')!!}">
-<link href="{!! asset('css/lib/owl.carousel.min.css')!!}" rel="stylesheet" />
-<link href="{!! asset('css/lib/owl.theme.default.min.css')!!}" rel="stylesheet" />
-<link href="{!! asset('css/lib/font-awesome.min.css')!!}" rel="stylesheet">
-<link href="{!! asset('css/lib/themify-icons.css')!!}" rel="stylesheet">
-<link href="{!! asset('css/lib/menubar/sidebar.css')!!}" rel="stylesheet">
-<link href="{!! asset('css/lib/bootstrap.min.css')!!}" rel="stylesheet">
-{{-- <link href="{!!asset('css/lib/datatable/dataTables.bootstrap.min.css')!!}" rel="stylesheet" />
-        <link href="{!!asset('css/lib/datatable/buttons.bootstrap.min.css')!!}" rel="stylesheet" /> --}}
-<link rel="stylesheet" type="text/css"
-    href="{!!url('https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css')!!}">
+        href="https://res.cloudinary.com/btsa-co-id/image/upload/v1541503574/jscsstxtfiledll/icon/starlogo.ico">
+    <meta name="keywords"
+        content="PPJK, EMKL, Expedisi, Export-Import, Custom Clearance, BTSA, BTSA LOGISTICS, Ekspedisi, Jasa Ekspedisi">
+    <title>@yield('title') | BTSA LOGISTICS</title>
 
-<link href="{!! asset('css/lib/helper.css')!!}" rel="stylesheet">
-<link href="{!! asset('css/style.css')!!}" rel="stylesheet">
+    <link href="{!!asset('css/new/css/plugins.css')!!}" rel="stylesheet">
+    <link href="{!!asset('css/new/css/themify-icons.css')!!}" rel="stylesheet">
+    <link href="{!!asset('css/new/css/style.css')!!}" rel="stylesheet">
+    <link href="{!!asset('css/new/css/all.css')!!}" rel="stylesheet">
 </head>
 
 <body>
-    <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
-        <div class="nano">
-            <div class="nano-content">
-                <div class="logo"><a href="/dashboard"><span>BTSA LOGISTICS</span></a></div>
-                <ul>
-                    <li class="label">Main Focus</li>
-                    <li><a href="/dashboard"><i class="ti-home"></i> Dashboard</a></li>
-                    <li class="label">Management</li>
-                    @if(auth()->user()->role == 'administrator')
-                    <li><a href="/member"><i class="ti-user"></i> User Managements</a></li>
-                    @endif
-                    @if(auth()->user()->role=='member'|| auth()->user()->role=='administrator')
-                    <li><a href="/packing-list"><i class="ti-package"></i> Packing List</a></li>
-                    @endif
-                    <li><a href="/logout"><i class="ti-close"></i> Logout</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- /# sidebar -->
-    <div class="header">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="float-left">
-                        <div class="hamburger sidebar-toggle">
-                            <span class="line"></span>
-                            <span class="line"></span>
-                            <span class="line"></span>
+
+    <div class="body-inner">
+
+        <header id="header" data-transparent="true" data-fullwidth="true" class="header-always-fixed">
+            <div class="header-inner">
+                <div class="container">
+
+                    <div id="logo">
+                        <a href="/">
+                            <img src="{!!asset('storage/img/brandlogo.png')!!}" alt="">
+                            {{-- <span class="logo-dark">{{asset('storage/img/brandbtsa.png')}}</span> --}}
+                        </a>
+                    </div>
+                    <div id="mainMenu-trigger">
+                        <a class="lines-button x"><span class="lines"></span></a>
+                    </div>
+
+                    <div id="mainMenu">
+                        <div class="container">
+                            <nav>
+                                <ul>
+                                    <li class="dropdown-submenu"><a href="#">Tentang kami</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="https://btsa.co.id/#aboutus">SIAPA KAMI?</a></li>
+                                            <li><a href="https://btsa.co.id/#visimisi">VISI & MISI</a></li>
+                                            <li><a href="https://btsa.co.id/#values">NILAI KAMI</a></li>
+                                            <li><a href="https://btsa.co.id/#ourservices">JASA KAMI</a></li>
+                                            <li><a href="https://btsa.co.id/#why">MENGAPA KAMI?</a></li>
+                                            <li><a href="https://btsa.co.id/#contact">KANTOR KAMI</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="https://btsa.co.id/gallery.html">GALERI</a></li>
+                                    <li><a href="https://btsa.co.id/candidate">APPLY JOB</a></li>
+                                </ul>
+                            </nav>
                         </div>
                     </div>
-                    <div class="float-right">
+
+                </div>
+            </div>
+        </header>
+
+        <section id="page-title" data-bg-parallax="{!!asset('storage/img/bg.jpg')!!}">
+            <div class="container">
+                <div class="page-title">
+                    <h1>@yield('title')</h1>
+                    <div class="breadcrumb">
                         <ul>
-                            <li class="header-icon dib"><span class="user-avatar">{{auth()->user()->nama_depan}}
-                                    {{auth()->user()->nama_belakang}} <i class="ti-angle-down f-s-10"></i></span>
-                                <div class="drop-down dropdown-profile">
-                                    <div class="dropdown-content-body">
-                                        <ul>
-                                            <li><a href="#"><i class="ti-user"></i> <span>Profile</span></a></li>
-
-                                            <li><a href="#"><i class="ti-email"></i> <span>Inbox</span></a></li>
-                                            <li><a href="/member/{{auth()->user()->id}}/edit"><i
-                                                        class="ti-settings"></i> <span>Setting</span></a></li>
-
-                                            <li><a href="#"><i class="ti-lock"></i> <span>Lock Screen</span></a></li>
-                                            <li><a href="/logout"><i class="ti-power-off"></i> <span>Logout</span></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
+                            <li><a href="https://btsa.co.id">Home</a>
+                            </li>
+                            <li><a href="/dashboard">Customer dashboard</a>
+                            </li>
+                            <li class="active"><a href="/">@yield('title')</a>
                             </li>
                         </ul>
-                    </div>
+                    </div><br>
+                    <span>Halo <strong>{{auth()->user()->nama_depan}} {{auth()->user()->nama_belakang}}</strong>,
+                        selamat
+                        datang di halaman penyajian
+                        data
+                        customer BTSA
+                        LOGISTICS.</span>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="content-wrap">
-        <div class="main">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-8 p-r-0 title-margin-right">
-                        <div class="page-header">
-                            <div class="page-title">
-                                <h1>Hello <strong>{{auth()->user()->nama_depan}}
-                                        {{auth()->user()->nama_belakang}}</strong>,</h1>
-                                <p class="text-muted">Your current role is <strong>{{auth()->user()->role}}.</strong>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /# column -->
-                    <div class="col-lg-4 p-l-0 title-margin-left">
-                        <div class="page-header">
-                            <div class="page-title">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                                    <li class="breadcrumb-item active">@yield('breadcrumb')</li>
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /# column -->
-                </div>
+        </section>
 
-                <!-- /# row -->
-                <section id="main-content">
-                    @yield('content')
+        @yield('content')
+
+        <footer id="footer">
+            <div class="footer-content">
+                <div class="container">
                     <div class="row">
-                        <div class="col-lg-12">
-                            <div class="footer">
-                                <p>©Copyright 2019 - Management Infinity Solutions. - <a
-                                        href="https://infinitysolutions.co.id">infinitysolutions.co.id</a></p>
+                        <div class="col-lg-4">
+                            <div class="widget">
+                                <div class="widget-title">KANTOR KAMI</div>
+                                <h4>PT. BERLIAN TANGGUH SEJAHTERA</h4>
+                                <p>Williem Iskandar Komp. MMTC B 84-85<br>
+                                    Medan Estate, Deli Serdang Medan 20371<br>
+                                    <a href="tel:06180032999">(061) 8003 2999</a> | Fax. (061) 8003 2996<br>
+                                    <span class="ti-email"></span> <a
+                                        href="mailto:market@btsa.co.id">market@btsa.co.id</a><br>
+                                    <span class="ti-email"></span> <a
+                                        href="mailto:sales_ap@btsa.co.id">sales_ap@btsa.co.id</a>
+                                </p>
+                                <h4>PT. SUMBER TRANSTAR ABADI</h4>
+                                <p>Jalan Veteran No.173C Kec.Ilir Timur I,<br>
+                                    Kel. Kepandean Baru - Palembang 31025<br>
+                                    <a href="tel:0711354811">(0711) 354811</a> | Fax. (0711) 358880<br>
+                                    <span class="ti-email"></span> <a
+                                        href="mailto:welly@stalogistics.co.id">welly@stalogistics.co.id</a><br>
+                                    <span class="ti-email"></span> <a
+                                        href="mailto:wel_gun8@yahoo.com">wel_gun8@yahoo.com</a>
+                                </p>
+                                <h4>PT. PANCA LESTARI PESTINDO</h4>
+                                <p>Jalan Williem Iskandar Komp. MMTC C 93-94<br>
+                                    Medan Estate, Deli Serdang Medan 20371<br>
+                                    <a href="tel:0711354811">(061) 8003 3461</a> | <a href="tel:081262142299">(+62) 812
+                                        6214 2299</a><br>
+                                    <span class="ti-email"></span> <a
+                                        href="mailto:market@plpestindo.co.id">market@plpestindo.co.id</a><br>
+                                    <span class="ti-email"></span> <a
+                                        href="mailto:plpestindo@gmail.com">plpestindo@gmail.com</a>
+                                </p>
+                                <h4>HUBUNGI KAMI</h4>
+                                <p>Kamu dapat mengirim pesan lewat email kami untuk mendapatkan penawaran yang terbaik.
+                                </p>
+                                <div class="social-icons social-icons-colored social-icons-rounded float-left">
+                                    <ul>
+                                        <li class="social-facebook"><a href="https://www.facebook.com/BTSALogistics/"><i
+                                                    class="fab fa-facebook-f"></i></a>
+                                        </li>
+                                        <li class="social-instagram"><a
+                                                href="https://www.instagram.com/btsalogistics"><i
+                                                    class="fab fa-instagram"></i></a></li>
+                                        <li class="social-youtube"><a
+                                                href="https://www.youtube.com/channel/UCxwory52I5zlEF5I5zv9STQ"><i
+                                                    class="fab fa-youtube"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 m-t-20">
+                            <div class="widget"
+                                style="background-image: url('{!!asset('storage/img/world-map-dark.png')!!}'); background-position: 50% 20px; background-repeat: no-repeat">
+                                <div class="widget-title"></div>
+                                <h4>PT BERLIAN TRANSTAR ABADI</h4>
+                                <p><strong>Medan</strong><br>
+                                    Jalan Williem Iskandar Komp. MMTC C 93-94<br>
+                                    Medan Estate, Deli Serdang Medan 20371<br>
+                                    <a href="tel:06180033461">(061) 8003 3461</a> | Fax. (061) 8003 2996<br>
+                                    <span class="ti-email"></span> <a
+                                        href="mailto:market@btsa.co.id">market@btsa.co.id</a></p>
+                                <p><strong>Jakarta</strong><br>
+                                    Ruko Gading Bukit Indah Blok SB No.25<br>
+                                    Jl. Raya Gading Kirana, RT.18/RW.8<br>
+                                    Kelapa Gading Barat, Jakarta Utara 14240<br>
+                                    <a href="tel:02145854261">(021) 4585 4261</a> | Fax. (061) 8003 2996<br>
+                                    <span class="ti-email"></span> <a
+                                        href="mailto:market@btsa.co.id">market@btsa.co.id</a></p>
+                                <p><strong>Surabaya</strong><br>
+                                    Jl. Kalimas Baru Blok A-8 No.29, Perak Utara, Kec. Pabean Cantian<br>
+                                    Kota SBY, Jawa Timur 60165<br>
+                                    <a href="tel:02145854261">(021) 4585 4261</a> | Fax. (061) 8003 2996<br>
+                                    <span class="ti-email"></span> <a
+                                        href="mailto:market@btsa.co.id">market@btsa.co.id</a></p>
+                                <p><strong>Makassar</strong><br>
+                                    Jalan gunung latimojong<br>
+                                    Ruko latimojong indah blok A - 28<br>
+                                    <a href="tel:04113633366">(0411) 363 3366</a> | Fax. (061) 8003
+                                    2996<br>
+                                    <span class="ti-email"></span> <a
+                                        href="mailto:market@btsa.co.id">market@btsa.co.id</a></p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="widget">
+                                <div class="widget-title">Lokasi kami</div>
+                                <div class="map" data-latitude="3.603072" data-longitude="98.709327" data-style="light">
+                                </div>
+
                             </div>
                         </div>
                     </div>
-                </section>
+                </div>
             </div>
-        </div>
+            <div class="copyright-content">
+                <div class="container">
+                    <div class="copyright-text text-center">&copy; 2019 BTSA LOGISTICS.
+                        All Rights Reserved.<a href="//www.infinitysolutions.co.id" target="_blank"> Infinity
+                            Solutions</a> </div>
+                </div>
+            </div>
+        </footer>
+
     </div>
-    <div id="search">
-        <button type="button" class="close">×</button>
-        <form>
-            <input type="search" value="" placeholder="type keyword(s) here" />
-            <button type="submit" class="btn btn-primary">Search</button>
-        </form>
-    </div>
-    <script src="{!!url('js/lib/jquery.min.js')!!}"></script>
-    <script src="{!!url('https://code.jquery.com/jquery-3.3.1.js')!!}"></script>
-    <script src="{!!asset('js/lib/jquery.nanoscroller.min.js')!!}"></script>
-    <!-- nano scroller -->
-    <script src="{!!asset('js/lib/menubar/sidebar.js')!!}"></script>
-    <script src="{!!asset('js/lib/preloader/pace.min.js')!!}"></script>
-    <!-- sidebar -->
-    <script src="{!!asset('js/lib/bootstrap.min.js')!!}"></script>
 
-    <!-- bootstrap -->
+    <a id="scrollTop"><i class="icon-chevron-up"></i><i class="icon-chevron-up"></i></a>
 
-    <script src="{!!asset('js/lib/circle-progress/circle-progress.min.js')!!}"></script>
-    <script src="{!!asset('js/lib/circle-progress/circle-progress-init.js')!!}"></script>
-
-    <script src="{!!asset('js/lib/morris-chart/raphael-min.js')!!}"></script>
-    <script src="{!!asset('js/lib/morris-chart/morris.js')!!}"></script>
-    <script src="{!!asset('js/lib/morris-chart/morris-init.js')!!}"></script>
-
-    <!--  flot-chart js -->
-    <script src="{!!asset('js/lib/flot-chart/jquery.flot.js')!!}"></script>
-    <script src="{!!asset('js/lib/flot-chart/jquery.flot.resize.js')!!}"></script>
-    <script src="{!!asset('js/lib/flot-chart/flot-chart-init.js')!!}"></script>
-    <!-- // flot-chart js -->
-
-
-    <script src="{!!asset('js/lib/vector-map/jquery.vmap.js')!!}"></script>
-    <!-- scripit init-->
-    <script src="{!!asset('js/lib/vector-map/jquery.vmap.min.js')!!}"></script>
-    <!-- scripit init-->
-    <script src="{!!asset('js/lib/vector-map/jquery.vmap.sampledata.js')!!}"></script>
-    <!-- scripit init-->
-    <script src="{!!asset('js/lib/vector-map/country/jquery.vmap.world.js')!!}"></script>
-
-    <script src="{!!asset('js/lib/vector-map/country/jquery.vmap.usa.js')!!}"></script>
-    <!-- scripit init-->
-    <script src="{!!asset('js/lib/vector-map/vector.init.js')!!}"></script>
-
-    <script src="{!!asset('js/lib/weather/jquery.simpleWeather.min.js')!!}"></script>
-    <script src="{!!asset('js/lib/weather/weather-init.js')!!}"></script>
-    <script src="{!!asset('js/lib/owl-carousel/owl.carousel.min.js')!!}"></script>
-    <script src="{!!asset('js/lib/owl-carousel/owl.carousel-init.js')!!}"></script>
-    <script src="{!!asset('js/scripts.js')!!}"></script>
-    <script type="text/javascript" charset="utf8"
-        src="{!!url('https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js')!!}"></script>
-    <script type="text/javascript" charset="utf8"
-        src="{!!url('https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js')!!}"></script>
-
+    <script src="{!!asset('js/jquery.js')!!}"></script>
+    <script src="{!!asset('js/plugins.js')!!}"></script>
+    <script src="{!!asset('js/functions.js')!!}"></script>
+    <script type='text/javascript'
+        src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAZIus-_huNW25Jl7RPmHgoGZjD5udgBMI'></script>
+    <script type="text/javascript" src="{!!asset('js/gmap3.min.js')!!}"></script>
+    <script type="text/javascript" src="{!!asset('js/map-styles.js')!!}"></script>
 </body>
 
 </html>
