@@ -254,19 +254,22 @@ section {
 }
 
 #page-title[data-bg-parallax] .page-title>h1 {
-    color: #fff
+    color: #282662;
+    font-weight:600;
 }
 
 #page-title[data-bg-parallax] .page-title>span {
-    color: #fff
+    color: #282662;
+    font-weight:600;
 }
 
 #page-title[data-bg-parallax] .breadcrumb ul li+li:before {
-    color: #fff
+    color: #282662;
 }
 
 #page-title[data-bg-parallax] .breadcrumb ul li a {
-    color: #fff
+    color: #282662;
+    font-weight:600;
 }
 
 #page-title[data-bg-parallax],
@@ -1449,7 +1452,7 @@ section {
 #header .header-inner,
 #header #header-wrap {
     height: 80px;
-    background-color: #fff;
+    background-color: #fff !important;
     left: 0;
     right: 0;
     -webkit-transition: all .4s ease-in-out;
@@ -1877,7 +1880,7 @@ section {
     font-size: 12px;
     font-weight: 600;
     letter-spacing: .6px;
-    color: #000;
+    color: #282662;
     border-radius: 0;
     border-width: 0;
     border-style: solid;
@@ -9396,7 +9399,9 @@ h6.font-parisienne {
     letter-spacing: 1px;
     font-weight: 600
 }
-
+#footer .widget h4{
+    margin-bottom: 0 !important;
+}
 #footer .widget .widget-title ul li a,
 #footer .widget h4 ul li a {
     font-family: poppins, sans-serif;
@@ -18786,7 +18791,7 @@ a.list-group-item.active.active {
     content: "\e649";
     font-family: themify;
     margin: 0 5px;
-    background-color: transparent
+    background-color: transparent;
 }
 
 .breadcrumb ul .breadcrumb-item a,
