@@ -76,16 +76,27 @@
                             </li>
                         </ul>
                     </div><br>
-                    <span>Halo <strong>{{auth()->user()->nama_depan}} {{auth()->user()->nama_belakang}}</strong>,
-                        selamat
-                        datang di halaman penyajian
-                        data
-                        customer BTSA
-                        LOGISTICS.</span>
                 </div>
             </div>
         </section>
-
+        @if(Auth::check())
+        <div class="page-menu menu-creative">
+            <div class="container">
+                <nav>
+                    <ul>
+                        <li class="active"><a href="/dashboard">Home</a></li>
+                        <li><a href="#">User management</a></li>
+                        <li><a href="#">Packing list</a></li>
+                        <li><a href="/logout"><span class="ti-power-off"></span> Logout</a></li>
+                    </ul>
+                </nav>
+                <div id="pageMenu-trigger">
+                    <i class="fa fa-bars"></i>
+                </div>
+            </div>
+        </div>
+        @else
+        @endif
         @yield('content')
 
         <footer id="footer">

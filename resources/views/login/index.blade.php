@@ -4,10 +4,10 @@
 <section>
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 offset-4">
+            <div class="col-lg-6 offset-3">
                 <div class="panel ">
                     <div class="panel-body">
-                        <h3>Login</h3>
+                        <h3>Login Dashboard Data Presentation</h3>
                         <form action="/postlogin" method="POST">
                             @csrf
                             <div class="form-group">
