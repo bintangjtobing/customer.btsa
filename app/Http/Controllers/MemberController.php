@@ -87,6 +87,8 @@ class MemberController extends Controller
         $data_member->email = $request->email;
         $data_member->role = $request->role;
         $data_member->status = $request->status;
+        $data_member->password = Hash::make($request->password);
+        $data_member->verified_password = $request->password;
         $data_member->remember_token = str_random(50);
         $data_member->updated_by = auth()->user()->nama_depan;
         $data_member->created_by = auth()->user()->nama_depan;
