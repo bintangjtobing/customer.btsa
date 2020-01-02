@@ -255,12 +255,12 @@ section {
 
 #page-title[data-bg-parallax] .page-title>h1 {
     color: #282662;
-    font-weight:600;
+    font-weight: 600;
 }
 
 #page-title[data-bg-parallax] .page-title>span {
     color: #282662;
-    font-weight:600;
+    font-weight: 600;
 }
 
 #page-title[data-bg-parallax] .breadcrumb ul li+li:before {
@@ -269,7 +269,7 @@ section {
 
 #page-title[data-bg-parallax] .breadcrumb ul li a {
     color: #282662;
-    font-weight:600;
+    font-weight: 600;
 }
 
 #page-title[data-bg-parallax],
@@ -9399,9 +9399,11 @@ h6.font-parisienne {
     letter-spacing: 1px;
     font-weight: 600
 }
-#footer .widget h4{
+
+#footer .widget h4 {
     margin-bottom: 0 !important;
 }
+
 #footer .widget .widget-title ul li a,
 #footer .widget h4 ul li a {
     font-family: poppins, sans-serif;
@@ -14133,6 +14135,48 @@ ul.nav li.dropdown:hover>ul.dropdown-menu {
 }
 
 @font-face {
+    font-family: 'Font Awesome 5 Brands';
+    font-style: normal;
+    font-weight: normal;
+    font-display: auto;
+    src: url("fonts/fa-brands-400.eot");
+    src: url("fonts/fa-brands-400.eot?#iefix") format("embedded-opentype"), url("fonts/fa-brands-400.woff2") format("woff2"), url("fonts/fa-brands-400.woff") format("woff"), url("fonts/fa-brands-400.ttf") format("truetype"), url("fonts/fa-brands-400.svg#fontawesome") format("svg");
+}
+
+.fab {
+    font-family: 'Font Awesome 5 Brands';
+}
+
+@font-face {
+    font-family: 'Font Awesome 5 Free';
+    font-style: normal;
+    font-weight: 400;
+    font-display: auto;
+    src: url("fonts/fa-regular-400.eot");
+    src: url("fonts/fa-regular-400.eot?#iefix") format("embedded-opentype"), url("fonts/fa-regular-400.woff2") format("woff2"), url("fonts/fa-regular-400.woff") format("woff"), url("fonts/fa-regular-400.ttf") format("truetype"), url("fonts/fa-regular-400.svg#fontawesome") format("svg");
+}
+
+.far {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Font Awesome 5 Free';
+    font-style: normal;
+    font-weight: 900;
+    font-display: auto;
+    src: url("fonts/fa-solid-900.eot");
+    src: url("fonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("fonts/fa-solid-900.woff2") format("woff2"), url("fonts/fa-solid-900.woff") format("woff"), url("fonts/fa-solid-900.ttf") format("truetype"), url("fonts/fa-solid-900.svg#fontawesome") format("svg");
+}
+
+.fa,
+.fas {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+}
+
+@font-face {
     font-family: 'themify';
     src: url('fonts/themify.eot?-fvbane');
     src: url('fonts/themify.eot?#iefix-fvbane') format('embedded-opentype'),
@@ -14160,7 +14204,7 @@ ul.nav li.dropdown:hover>ul.dropdown-menu {
 
 @font-face {
     font-family: inspiro-icons;
-    src: url(../webfonts/inspiro-icons.ttf?ijzgpf) format("truetype"), url(../webfonts/inspiro-icons.woff?ijzgpf) format("woff");
+    src: url(fonts/inspiro-icons.ttf?ijzgpf) format("truetype"), url(fonts/inspiro-icons.woff?ijzgpf) format("woff");
     font-weight: 400;
     font-style: normal;
     font-display: block

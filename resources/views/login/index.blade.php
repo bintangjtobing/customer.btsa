@@ -16,6 +16,7 @@
     <link href="{!!asset('css/new/css/plugins.css')!!}" rel="stylesheet">
     <link href="{!!asset('css/new/css/themify-icons.css')!!}" rel="stylesheet">
     <link href="{!!asset('css/new/css/style.css')!!}" rel="stylesheet">
+    <link href="{!!asset('css/new/css/all.css')!!}" rel="stylesheet">
 </head>
 
 <body>
@@ -132,6 +133,27 @@
                                     <span class="ti-email"></span> <a
                                         href="mailto:sales_ap@btsa.co.id">sales_ap@btsa.co.id</a>
                                 </p>
+                                <h4>PT. SUMBER TRANSTAR ABADI</h4>
+                                <p><span class="ti-pin"></span> Jalan Veteran No.173C Kec.Ilir Timur I,<br>
+                                    Kel. Kepandean Baru - Palembang 31025<br>
+                                    <a href="tel:0711354811">(0711) 354811</a> | Fax. (0711) 358880<br>
+                                    <span class="ti-email"></span> <a
+                                        href="mailto:welly@stalogistics.co.id">welly@stalogistics.co.id</a><br>
+                                    <span class="ti-email"></span> <a
+                                        href="mailto:wel_gun8@yahoo.com">wel_gun8@yahoo.com</a>
+                                </p>
+                                <h4>HUBUNGI KAMI</h4>
+                                <p>Kamu dapat mengirim pesan lewat email kami untuk mendapatkan penawaran yang terbaik.
+                                </p>
+                                <div class="social-icons social-icons-colored social-icons-rounded float-left">
+                                    <ul>
+                                        <li class="social-rss"><a href="#"><i class="fa fa-rss"></i></a></li>
+                                        <li class="social-facebook"><a href="#"><i class="fab fa-facebook-f"></i></a>
+                                        </li>
+                                        <li class="social-twitter"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                        <li class="social-youtube"><a href="#"><i class="fab fa-youtube"></i></a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                         <div class="col-lg-7">
