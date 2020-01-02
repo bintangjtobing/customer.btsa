@@ -20,13 +20,13 @@ Route::group(['middleware' => ['auth', 'roleCheck:administrator']], function () 
     Route::post('/member/addnew', 'MemberController@addnewmember');
 
     // ROUTE GET (EDIT ROUTE)
-    Route::get('member/{member_id}/edit', 'MemberController@edit');
+    Route::get('member/{id}/edit', 'MemberController@edit');
 
     // ROUTE UPDATE (UPDATE ROUTE)
-    Route::post('member/{member_id}/update', 'MemberController@update');
+    Route::post('member/{id}/update', 'MemberController@update');
 
     // ROUTE DELETE (DELETE ROUTE)
-    Route::get('member/{member_id}/delete', 'MemberController@delete');
+    Route::get('member/{id}/delete', 'MemberController@delete');
 });
 // MEMBER JADWAL KAPAL
 Route::group(['middleware' => ['auth', 'roleCheck:member']], function () {

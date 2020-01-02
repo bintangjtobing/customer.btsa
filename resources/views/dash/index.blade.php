@@ -1,5 +1,6 @@
 @extends('layouts.layout')
 @section('title','Dashboard')
+@section('statusdashboard','active')
 @section('content')
 <section>
     <div class="container">

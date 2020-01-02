@@ -1,5 +1,6 @@
 @extends('layouts.layout')
 @section('title','Customer Login')
+@section('status','statusdashboard')
 @section('content')
 <section>
     <div class="container">

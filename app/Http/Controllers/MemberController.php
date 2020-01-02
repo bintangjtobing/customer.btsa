@@ -37,7 +37,7 @@ class MemberController extends Controller
         $data_member->created_by = auth()->user()->nama_depan;
         $data_member->save();
 
-        return back()->with('sukses', 'New member data has been succesfully added!');
+        return back()->with('sukses', 'Akun anda telah berhasil diajukan. Hubungi pihak managemen IT anda untuk menyetujui ajuan daftar anggota anda. Dan tunggu akan email anda untuk informasi username dan password anda');
     }
     public function registered(Request $request)
     {
@@ -65,7 +65,7 @@ class MemberController extends Controller
 
                 DB::statement('ALTER TABLE users AUTO_INCREMENT = ' . (count(MemberModel::all()) + 1) . ';');
 
-                return back()->with('sukses', 'Member has been successfully deleted!');
+                return back()->with('sukses', 'Akun keanggotaan telah berhasil dihapus!');
             }
         }
     }

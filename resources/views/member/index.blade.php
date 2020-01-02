@@ -1,69 +1,82 @@
 @extends('layouts.layout')
-@section('title','Member Managements')
-@section('breadcrumb','Member managements')
+@section('title','User Managements')
+@section('statususer','active')
 @section('content')
-<div class="card">
-    <div class="card-title">
-        <h4>Member Managements</h4>
-        <a href="#additem">
-            <button type="button" class="btn btn-primary btn-flat btn-addon m-b-10 float-right" data-toggle="modal"
-                data-target="#additem">
-                <span class="ti-plus"></span> Add Member
-            </button>
-        </a>
-    </div>
-    <div class="card-body">
-        @if (session('sukses'))
-        <div class="alert alert-success alert-dismissible fade show">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
-                    aria-hidden="true">&times;</span></button>
-            <strong>Successfull!</strong> {{session('sukses')}}
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h3>User managements</h3>
+            </div>
+            <div class="col-6 text-right">
+                <a href="#additem">
+                    <button type="button" class="btn btn-primary btn-flat btn-addon m-b-10 float-right"
+                        data-toggle="modal" data-target="#additem">
+                        <span class="ti-plus"></span> Add Member
+                    </button>
+                </a>
+            </div>
+        </div>
+        @if(session('sukses'))
+        <div class="row">
+            <div class="col-12">
+                <div role="alert" class="alert alert-success alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                            aria-hidden="true">&times;</span> </button>
+                    <strong><i class="fa fa-check-circle"></i> Berhasil!</strong> {{session('sukses')}} </div>
+            </div>
         </div>
         @endif
-        <div class="table-responsive">
-            <table id="memberTables" class="table table-hover">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Fullname</th>
-                        <th>Username</th>
-                        <th>Email</th>
-                        <th>Role</th>
-                        <th>Status</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @if(!$data_member->isEmpty())
-
-                    @php $no = 1; @endphp
-                    @foreach($data_member as $dt_member)
-                    <tr>
-                        <th scope="row">{{$no++}}</th>
-                        <td>{{$dt_member->nama_depan}} {{$dt_member->nama_belakang}}</td>
-                        <td><span class="badge badge-primary">{{$dt_member->username}}</span></td>
-                        <td>{{$dt_member->email}}</td>
-                        <td>{{$dt_member->role}}</td>
-                        <td>
-                            @if($dt_member->status=='active') <span style="color: green" title="Active"><i
-                                    class="fas fa-check-circle"></i></span>
-                            @else
-                            <span style="color: red"><i class="fas fa-times-circle"></i></span>
-                            @endif</td>
-                        <td><a href="/member/{{$dt_member->id}}/edit"><button class="btn btn-rounded btn-warning"><i
-                                        class="fas fa-edit"></i></button></a> <a
-                                href="/member/{{$dt_member->id}}/delete"><button class="btn btn-rounded btn-danger"><i
-                                        class="fas fa-trash-alt"></i></button></a></td>
-                    </tr>
-                    @endforeach
-                    @else
-                    <td colspan="7" class="text-center">No data founded!</td>
-                    @endif
-                </tbody>
-            </table>
+        <div class="row">
+            <?php $i = 1; ?>
+            <div id="memberTables" class="table-responsive display">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nama Lengkap</th>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($data_member as $member)
+                        <tr>
+                            <td>{{$i++}}</td>
+                            <td>{{$member->nama_depan}} {{$member->nama_belakang}}</td>
+                            <td>{{$member->username}}</td>
+                            <td>{{$member->email}}</td>
+                            <td>{{$member->role}}</td>
+                            <td>@if($member->status=='active')
+                                <span style="color: green" title="Active"><i class="fas fa-check-circle"></i></span>
+                                @else
+                                <span style="color: red" title="Active"><i class="fas fa-times-circle"></i></span>
+                                @endif
+                            </td>
+                            <td><a href="/member/{{$member->id}}/edit">
+                                    <button class="btn btn-xs btn-slide btn-warning" data-width="75">
+                                        <i class="fas fa-pen"></i>
+                                        <span>Edit</span>
+                                    </button>
+                                </a>
+                                <a href="/member/{{$member->id}}/delete">
+                                    <button class="btn btn-xs btn-slide btn-danger" data-width="75">
+                                        <i class="fas fa-trash-alt"></i>
+                                        <span>Hapus</span>
+                                    </button>
+                                </a>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-</div>
+</section>
 <script>
     $(document).ready(function () {
         $('#memberTables').DataTable();
@@ -83,9 +96,12 @@
                                 <div class="col-md-12">
                                     <div class="form-row form-group">
                                         <div class="col">
-                                            <label for="nama_depan">Nama Depan</label>
-                                            <input type="text" class="form-control" name="nama_depan" autofocus
-                                                required>
+                                            <label for="nama_depan">Panggilan</label>
+                                            <select name="nama_depan">
+                                                <option selected>Pilih panggilan kamu disini...</option>
+                                                <option value="Bpk.">Bapak</option>
+                                                <option value="Ibu.">Ibu</option>
+                                            </select>
                                         </div>
                                         <div class="col">
                                             <label for="nama_belakang">Nama Belakang</label>
@@ -123,7 +139,9 @@
                                         <div class="col">
                                             <label for="password">Password</label>
                                             <input type="text" class="form-control" name="password"
-                                                value="{{$generatepass}}" readonly>
+                                                value="{{$generatepass}}" id="password" readonly>
+                                            <small><a onclick="copyFunction();return false;" href="#">Copy
+                                                    password to clipboard</a></small>
                                         </div>
                                         <div class="col">
                                             <label for="role">Tipe user</label>
@@ -159,6 +177,17 @@
 
         }
     });
+
+</script>
+<script>
+    function copyFunction() {
+        const copyText = document.getElementById('password');
+
+        copyText.select();
+        document.execCommand("copy");
+
+        alert("Password berhasil disalin: " + copyText.value);
+    }
 
 </script>
 @endsection

@@ -84,9 +84,9 @@
             <div class="container">
                 <nav>
                     <ul>
-                        <li class="active"><a href="/dashboard">Home</a></li>
-                        <li><a href="#">User management</a></li>
-                        <li><a href="#">Packing list</a></li>
+                        <li class="@yield('statusdashboard')"><a href="/dashboard">Home</a></li>
+                        <li class="@yield('statususer')"><a href="#">User management</a></li>
+                        <li class="@yield('statuspacking')"><a href="#">Packing list</a></li>
                         <li><a href="/logout"><span class="ti-power-off"></span> Logout</a></li>
                     </ul>
                 </nav>
