@@ -19,10 +19,6 @@
     <link href="{!!asset('css/new/css/all.css')!!}" rel="stylesheet">
     <link rel="stylesheet" type="text/css"
         href="{!!url('https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.20/r-2.2.3/datatables.min.css')!!}">
-
-
-
-
 </head>
 
 <body>
