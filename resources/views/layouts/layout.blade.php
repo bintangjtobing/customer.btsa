@@ -17,6 +17,12 @@
     <link href="{!!asset('css/new/css/themify-icons.css')!!}" rel="stylesheet">
     <link href="{!!asset('css/new/css/style.css')!!}" rel="stylesheet">
     <link href="{!!asset('css/new/css/all.css')!!}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+        href="{!!url('https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.20/r-2.2.3/datatables.min.css')!!}">
+
+
+
+
 </head>
 
 <body>
@@ -212,10 +218,20 @@
     <script src="{!!asset('js/jquery.js')!!}"></script>
     <script src="{!!asset('js/plugins.js')!!}"></script>
     <script src="{!!asset('js/functions.js')!!}"></script>
-    <script type='text/javascript'
-        src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAZIus-_huNW25Jl7RPmHgoGZjD5udgBMI'></script>
     <script type="text/javascript" src="{!!asset('js/gmap3.min.js')!!}"></script>
     <script type="text/javascript" src="{!!asset('js/map-styles.js')!!}"></script>
+    <script type="text/javascript"
+        src="{!!url('https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.20/r-2.2.3/datatables.min.js')!!}">
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#tableDashboard').DataTable();
+        });
+
+    </script>
+    <script type='text/javascript'
+        src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAZIus-_huNW25Jl7RPmHgoGZjD5udgBMI'></script>
+
 </body>
 
 </html>

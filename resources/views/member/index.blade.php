@@ -29,8 +29,8 @@
         @endif
         <div class="row">
             <?php $i = 1; ?>
-            <div id="memberTables" class="table-responsive display">
-                <table class="table">
+            <div class="table-responsive">
+                <table class="table" id="tableDashboard">
                     <thead>
                         <tr>
                             <th>#</th>
@@ -77,12 +77,7 @@
         </div>
     </div>
 </section>
-<script>
-    $(document).ready(function () {
-        $('#memberTables').DataTable();
-    });
 
-</script>
 <!-- Modal -->
 <div class="modal fade" id="additem" tabindex="-1" role="dialog" aria-labelledby="additem" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
