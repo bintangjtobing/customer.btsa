@@ -102,8 +102,8 @@
                 <nav>
                     <ul>
                         <li class="@yield('statusdashboard')"><a href="/dashboard">Home</a></li>
-                        <li class="@yield('statususer')"><a href="#">User management</a></li>
-                        <li class="@yield('statuspacking')"><a href="#">Packing list</a></li>
+                        <li class="@yield('statususer')"><a href="/member">User management</a></li>
+                        <li class="@yield('statuspacking')"><a href="/packing-list">Packing list</a></li>
                         <li><a href="/logout"><span class="ti-power-off"></span> Logout</a></li>
                     </ul>
                 </nav>
