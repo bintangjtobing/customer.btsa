@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 @section('title','Packing List')
-@section('breadcrumb','Packing List')
+@section('statuspacking','active')
 @section('content')
 <div class="card">
     <div class="card-title">

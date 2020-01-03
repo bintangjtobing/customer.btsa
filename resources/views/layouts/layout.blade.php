@@ -59,6 +59,17 @@
                                     </li>
                                     <li><a href="https://btsa.co.id/gallery.html">GALERI</a></li>
                                     <li><a href="https://btsa.co.id/candidate">APPLY JOB</a></li>
+                                    @if(Auth::check())
+                                    <li class="dropdown-submenu">
+                                        <a href="#">{{auth()->user()->nama_depan}} {{auth()->user()->nama_belakang}}
+                                            <i class="fas fa-user-circle"></i></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="/member/{{auth()->user()->id}}/edit">Account settings</a></li>
+                                            <li><a href="/logout">Logout</a></li>
+                                        </ul>
+                                    </li>
+                                    @else
+                                    @endif
                                 </ul>
                             </nav>
                         </div>
