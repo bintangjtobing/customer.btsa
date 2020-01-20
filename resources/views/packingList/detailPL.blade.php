@@ -40,7 +40,6 @@
                         </tr>
                     </thead>
                     <tbody>
-
                         @foreach ($data_packing as $pl_item)
                         <tr style="font-size:12px;"
                             onclick="window.location='/detail-packing-list/{{$pl_item->PackingListID}}';">
@@ -48,8 +47,7 @@
                             <td>{{$pl_item->PackingListNo}}</td>
                             <td>{{date('d-m-Y', strtotime($pl_item->Date))}}</td>
                             <td>{{$pl_item->PackingListType}}</td>
-                            <td>@if($pl_item->OriginLocationID)Hello @endif
-                            </td>
+                            <td>{{$pl_item->OriginLocationID}}</td>
                             <td>{{$pl_item->DestinationLocationID}}</td>
                             <td>{{$pl_item->Destination}}</td>
                             <td>{{$pl_item->Summary}}</td>

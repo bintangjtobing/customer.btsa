@@ -32,4 +32,5 @@ Route::group(['middleware' => ['auth', 'roleCheck:administrator']], function () 
 Route::group(['middleware' => ['auth', 'roleCheck:member,administrator']], function () {
     // ROUTE VIEW
     Route::get('/packing-list/{CustomerID}', 'PackingController@index');
+    Route::get('/detail-packing-list/{PackingListID}', 'PackingController@detailPL');
 });
