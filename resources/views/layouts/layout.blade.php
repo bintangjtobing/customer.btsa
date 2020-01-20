@@ -18,7 +18,7 @@
     <link href="{!!asset('css/new/css/style.css')!!}" rel="stylesheet">
     <link href="{!!asset('css/new/css/all.css')!!}" rel="stylesheet">
     <link rel="stylesheet" type="text/css"
-        href="{!!url('https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.20/r-2.2.3/datatables.min.css')!!}">
+        href="{!!url('https://cdn.datatables.net/v/bs4-4.1.1/dt-1.10.20/datatables.min.css')!!}">
 </head>
 
 <body>
@@ -79,7 +79,7 @@
             <div class="container">
                 <div class="page-title">
                     <h1>@yield('title')</h1>
-                    <div class="breadcrumb">
+                    {{-- <div class="breadcrumb">
                         <ul>
                             <li><a href="https://btsa.co.id">Home</a>
                             </li>
@@ -88,7 +88,7 @@
                             <li class="active"><a href="/">@yield('title')</a>
                             </li>
                         </ul>
-                    </div><br>
+                    </div><br> --}}
                 </div>
             </div>
         </section>
@@ -99,7 +99,8 @@
                     <ul>
                         <li class="@yield('statusdashboard')"><a href="/dashboard">Home</a></li>
                         <li class="@yield('statususer')"><a href="/member">User management</a></li>
-                        <li class="@yield('statuspacking')"><a href="/packing-list">Packing list</a></li>
+                        <li class="@yield('statuspacking')"><a
+                                href="/packing-list/{{auth()->user()->CustomerID}}">Packing list</a></li>
                         <li><a href="/logout"><span class="ti-power-off"></span> Logout</a></li>
                     </ul>
                 </nav>
@@ -227,14 +228,22 @@
     <script src="{!!asset('js/functions.js')!!}"></script>
     <script type="text/javascript" src="{!!asset('js/gmap3.min.js')!!}"></script>
     <script type="text/javascript" src="{!!asset('js/map-styles.js')!!}"></script>
-    <script type="text/javascript"
-        src="{!!url('https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.20/r-2.2.3/datatables.min.js')!!}">
-    </script>
     <script>
         $(document).ready(function () {
             $('#tableDashboard').DataTable();
         });
 
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#memberTables').DataTable();
+        });
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script type="text/javascript"
+        src="{!!url('https://cdn.datatables.net/v/bs4-4.1.1/dt-1.10.20/datatables.min.js')!!}">
     </script>
     <script type='text/javascript'
         src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAZIus-_huNW25Jl7RPmHgoGZjD5udgBMI'></script>

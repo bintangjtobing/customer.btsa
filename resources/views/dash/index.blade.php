@@ -17,7 +17,7 @@
                 <a href="/member" class="btn btn-light btn-lg">USER MANAGEMENT</a>
             </div>
             <div class="col-6 text-left">
-                <a href="/packing-list" class="btn btn-light btn-lg">PACKING LIST</a>
+                <a href="/packing-list/{{auth()->user()->CustomerID}}" class="btn btn-light btn-lg">PACKING LIST</a>
             </div>
         </div>
     </div>

@@ -2,142 +2,61 @@
 @section('title','Packing List')
 @section('statuspacking','active')
 @section('content')
-<div class="card">
-    <div class="card-title">
-        <h4>Packing List</h4>
-        <a href="#additem">
-            <button type="button" class="btn btn-primary btn-flat btn-addon m-b-10 float-right" data-toggle="modal"
-                data-target="#additem">
-                <span class="ti-plus"></span> Add Member
-            </button>
-        </a>
-    </div>
-    <div class="card-body">
-        @if (session('sukses'))
-        <div class="alert alert-success alert-dismissible fade show">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
-                    aria-hidden="true">&times;</span></button>
-            <strong>Successfull!</strong> {{session('sukses')}}
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>Halo <b>{{auth()->user()->nama_depan}} {{auth()->user()->nama_belakang}}</b></h3>
+                <h5>@foreach ($data_cust as $item)
+                    <b>{{$item->CustomerName}}</b>
+                    @endforeach</h5>
+                <hr>
+            </div>
         </div>
-        @endif
-        <div class="table-responsive">
-            <table id="memberTables" class="table table-hover">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Fullname</th>
-                        <th>Username</th>
-                        <th>Email</th>
-                        <th>Role</th>
-                        <th>Status</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @if(!$data_packing->isEmpty())
+        <div class="row">
+            <div class="col-lg-12">
+                <h5>Data penanggung jawab</h5><br>
+                <p>
+                    Nama penanggung jawab: {{auth()->user()->nama_depan}} {{auth()->user()->nama_belakang}}<br>
+                    Email penanggung jawab: {{auth()->user()->email}}<br>
+                    Nomor HP penanggung jawab: {{auth()->user()->nohp}}<br>
+                </p>
 
-                    @php $no = 1; @endphp
-
-                    @else
-                    <td colspan="7" class="text-center">No data founded!</td>
-                    @endif
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
-<script>
-    $(document).ready(function () {
-        $('#memberTables').DataTable();
-    });
-
-</script>
-<!-- Modal -->
-{{-- <div class="modal fade" id="additem" tabindex="-1" role="dialog" aria-labelledby="additem" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-            <form action="/member/addnew" method="POST">
-                {{ csrf_field() }}
-<div class="modal-body">
-    <div class="card-body">
-        <div class="basic-elements">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-row form-group">
-                        <div class="col">
-                            <label for="nama_depan">Nama Depan</label>
-                            <input type="text" class="form-control" name="nama_depan" autofocus required>
-                        </div>
-                        <div class="col">
-                            <label for="nama_belakang">Nama Belakang</label>
-                            <input type="text" name="nama_belakang" class="form-control" required>
-                        </div>
-                    </div>
-                    <div class="form-group form-row">
-                        <div class="col">
-                            <label for="username">Username</label>
-                            <input type="text" class="form-control" name="username" required>
-                        </div>
-                        <div class="col">
-                            <label for="nohp">Nomor telepon</label>
-                            <input type="text" name="nohp" class="form-control" required pattern=".{12,}">
-                            <small>Ex: 08xxxxxxxxxx | maksimal 12 nomor.</small>
-                        </div>
-                        <div class="col">
-                            <label for="CustomerID">Perusahaan / Instansi</label>
-                            <select name="CustomerID" id="CustomerID" class="custom-select">
-                                <option value="">- None -</option>
-                                @foreach ($dataarcustomer as $item)
-                                <option value="{{$item->CustomerID}}">{{$item->CustomerName}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-row form-group">
-                        <div class="col">
-                            <label for="email">Email</label>
-                            <input type="text" class="form-control" name="email" required
-                                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
-                            <small>Ex: *****@mail.com</small>
-                        </div>
-                        <div class="col">
-                            <label for="password">Password</label>
-                            <input type="text" class="form-control" name="password" value="{{$generatepass}}" readonly>
-                        </div>
-                        <div class="col">
-                            <label for="role">Tipe user</label>
-                            <select name="role" id="role" class="custom-select">
-                                <option value="administrator">Administrator</option>
-                                <option value="member">Member</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
+                <hr>
+                <?php $i = 1 ?>
+                <table id="memberTables" class="table display table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th style="width:10px;">#</th>
+                            <th scope="col">PackingList No.</th>
+                            <th scope="col">Tanggal</th>
+                            <th scope="col">Tipe</th>
+                            <th>Lokasi asal</th>
+                            <th>Lokasi tujuan</th>
+                            <th>Destination</th>
+                            <th>Summary</th>
+                            <th>Estimasi tiba</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($data_packing as $pl_item)
+                        <tr>
+                            <td>{{$i++}}</td>
+                            <td>{{$pl_item->PackingListNo}}</td>
+                            <td>{{date('d-m-Y', strtotime($pl_item->Date))}}</td>
+                            <td>{{$pl_item->PackingListType}}</td>
+                            <td>{{$pl_item->OriginLocationID}}</td>
+                            <td>{{$pl_item->DestinationLocationID}}</td>
+                            <td>{{$pl_item->Destination}}</td>
+                            <td>{{$pl_item->Summary}}</td>
+                            <td>{{date('d-m-Y', strtotime($pl_item->ETD))}}</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
-</div>
-<div class="modal-footer">
-    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-    <button type="submit" class="btn btn-primary">Tambah member baru</button>
-</div>
-</form>
-</div>
-</div>
-</div> --}}
-<script>
-    $('button[name="btn-regist"]').click(function () {
-        if ($('input[name="password"]').val().length < 6) {
-            alert('Minimum password length = 6');
-        } else if {
-            if ($('input[name="nohp"]').val().length < 12) {
-                alert('Nomor hp minimal mempunyai 12 angka.');
-            } else {
-                $('form').submit();
-            }
+</section>
 
-        }
-    });
-
-</script>
 @endsection

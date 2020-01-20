@@ -48,6 +48,7 @@ class AuthController extends Controller
     {
         $request->merge(['status' => 'active']);
         if (Auth::attempt($request->only('username', 'password', 'status'))) {
+
             return redirect('/dashboard');
         }
         return back()->with('sukses', 'Auth authorization failed or check your username and password!');

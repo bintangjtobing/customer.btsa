@@ -31,9 +31,5 @@ Route::group(['middleware' => ['auth', 'roleCheck:administrator']], function () 
 // MEMBER JADWAL KAPAL
 Route::group(['middleware' => ['auth', 'roleCheck:member,administrator']], function () {
     // ROUTE VIEW
-    Route::get('/packing-list', 'PackingController@index');
-    // ROUTE GET (EDIT ROUTE)
-    Route::get('member/{member_id}/edit', 'MemberController@edit');
-    // ROUTE UPDATE (UPDATE ROUTE)
-    Route::post('member/{member_id}/update', 'MemberController@update');
+    Route::get('/packing-list/{CustomerID}', 'PackingController@index');
 });
